@@ -53,7 +53,7 @@ int main() {
     /* get zdtun own fds */
     zdtun_fds(tun, &max_fd, &fdset, &wrfds);
 
-    /* Add client fd to the readable fds */
+    /* Add client global_fd to the readable fds */
     FD_SET(cli_socket, &fdset);
     max_fd = max(max_fd, cli_socket);
 

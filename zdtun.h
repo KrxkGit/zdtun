@@ -24,6 +24,8 @@
 #ifndef __ZDTUN_H__
 #define __ZDTUN_H__
 
+#include <sys/types.h>
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <errno.h>
@@ -350,7 +352,7 @@ void zdtun_finalize(zdtun_t *tun);
  * @brief Get zdtun file descriptors, suitable for a select.
  *
  * @param tun a zdtun instance.
- * @param max_fd will be filled with the maximum fd number from zdtun.
+ * @param max_fd will be filled with the maximum global_fd number from zdtun.
  * @param rdfd will be filled with zdtun readable file descriptors.
  * @param wrfd will be filled with zdtun writable file descriptors.
  */
