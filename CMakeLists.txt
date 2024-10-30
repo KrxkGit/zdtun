@@ -16,6 +16,11 @@ if(ANDROID)
   find_library(log-lib log)
 
   TARGET_LINK_LIBRARIES(zdtun ${log-lib})
+elseif (OHOS)
+  ADD_LIBRARY(zdtun STATIC ${ZDTUN_SOURCES})
+
+  TARGET_LINK_LIBRARIES(zdtun)
+  add_definitions(-DOHOS)
 else()
   ADD_LIBRARY(zdtun SHARED ${ZDTUN_SOURCES})
   ADD_LIBRARY(zdtun_static STATIC ${ZDTUN_SOURCES})
